@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1</title>
+    <style>
+      input,
+      button {
+        display: block;
+        margin-top: 1em;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <!-- HTML elements here -->
+    <label for="name">Your name:<input type="text" id="name" /></label>
+    <button id="submit">Submit</button>
+    <p id="welcome"></p>
+
+    <!-- script tags below here -->
+    <script>
+      // a JS comment
+      // var input = document.querySelector('#name');
+      // var button = document.querySelector('#submit');
+      var welcome = document.querySelector("#welcome");
+
+      function getAndDisplayName() {
+        var name = document.querySelector("#name").value;
+        document.querySelector("#welcome").innerHTML =
+          "Welcome to my site, " + name;
+      }
+
+      document
+        .querySelector("#submit")
+        .addEventListener("click", getAndDisplayName); // 2nd arg is callback
+      // callback passes function code as data
+      // callbacks are THE prevalent pattern in JS
+      // especially in async
+      // see event loop video - Friday - Jake Archibald
+      // a JS Comment
+      /*
+a JS
+multi-line comment
+*/
+    </script>
+  </body>
+</html>

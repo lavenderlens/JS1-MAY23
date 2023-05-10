@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linked scripts</title>
+    <script src="external.js"></script>
+    <!-- local scripts defined underneath linked scripts for frameworks etc -->
+    <script>
+      function sayHi() {
+        alert("Hi from a LOCAL script");
+      }
+    </script>
+    <!-- <script src="external.js"></script> -->
+  </head>
+  <body>
+    <button onclick="sayHi()">SAY HI</button>
+    <!-- <button
+      onclick="
+    function sayHi()
+    {
+        alert('Hi from INLINE script');
+    };
+    sayHi()
+    "
+    >
+      SAY HI
+    </button> -->
+  </body>
+</html>
