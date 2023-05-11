@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWITCH AND SELECT</title>
+  </head>
+  <body>
+    <h1>Switch used with Select</h1>
+
+    <select id="select">
+      <option>Choose meal deal:</option>
+      <option value="1">Burger only.</option>
+      <option value="2">Burger and fries.</option>
+      <option value="3">Burger, fries, and medium drink.</option>
+    </select>
+    <script>
+      let select = document.querySelector("#select"); //global
+      function takeOrder() {
+        let mealDeal = select.value; //local - time-specific
+        switch (mealDeal) {
+          case "3":
+            console.log("Drink, ");
+          case "2":
+            console.log("Fries, ");
+          case "1":
+            console.log("Burger.");
+          default: //like else
+            console.log("Thankyou");
+        } // end switch
+      }
+      select.addEventListener("change", takeOrder); //re-use global var
+    </script>
+  </body>
+</html>
