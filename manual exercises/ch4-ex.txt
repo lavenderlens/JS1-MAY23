@@ -1,0 +1,45 @@
+CH4 exercises
+
+Simple calculator
+1. Create a HTML page named calculator.html.
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Prompttheuserforthefirstnumber.
+5. Prompt the user for the second number.
+6. Prompt the user for an operator (+ - / *).
+7. Convert each number value entered from a string to a number.
+8. Declare a variable named result and initialise it to 0. You should assign the result
+of the arithmetic expression to this variable.
+9. If the operator is +, add the two numbers.
+10. If the operator is -, subtract the second number from the first.
+11. If the operator is *, find the product of the two numbers.
+12. If the operator is /, divide the first number by the second.
+13. Display the result in an alert with an appropriate label.
+14. Save your changes.
+15. Open the file in Chrome and test the code thoroughly.
+16. What could be done to make this code more robust?
+
+
+Chrono quiz (version 1)
+1. Create an HTML page name chrono-quiz-1.html (first version).
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Declare and initialise three variables to store three questions as follows:
+In what year did the Titanic sink on her maiden voyage?  In what year did WW1 begin? 
+In what year was the Qualification of Women act passed?
+5. Declare and initialise three variables to store three answers as follows:
+1912
+1914
+1918
+6. Construct a for loop with a control variable initialised to 1, 
+    a boolean expression that tests if the control variable is less than or equal to 3, 
+    and that increments the control variable by 1 at the end of each loop.
+7. Add a switch statement inside the loop that tests the loop’s control variable.
+8. If the control variable is 1, prompt the user to answer question 1. 
+    If the user’s answer equals the correct answer, 
+    display an alert with the message “Right!”, else
+    display an alert with the message “Wrong! It was <correct answer>”.
+9. Repeat step 8 twice more for questions 2 and 3.
+10. Save your changes.
+11. Open the file in Chrome and test the code thoroughly.
+12. How might this code be improved?

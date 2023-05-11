@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EX5</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- styles before scripts -->
+  <!-- linked styles before local styles -->
+<!--   <link rel="stylesheet" href="style.css"> -->
+  <style>
+
+  </style>
+  <!-- linked scripts before local scripts -->
+<!--   <script src="js/main.js"></script>  
+ -->  <script>
+    //test JS here
+    var numMarks = prompt('enter number of marks to be graded:');
+    //need way of cancel calling break?
+    var total = 0;
+    var count = numMarks;
+    var average;
+    //in loop
+    while(count > 0){
+      var mark = prompt('enter mark: (marks remaining ' + count + ')');
+      total += +mark;
+      count--;
+    }
+    //alert('Average mark= ' + (total/numMarks));
+    //testing
+    //CAREFUL datatype (needs brackets)
+    average = total/numMarks;
+    if(average >= 90){
+      alert('Grade A');
+    }else if(average >= 80){
+      alert('Grade B');
+    }else if(average >= 70){
+      alert('Grade C');
+    }else if(average >= 60){
+      alert('Grade D');
+    }else if(average >= 50){
+      alert('Pass');
+    }else alert('Fail');
+
+  </script>
+</head>
+<body>
+  <h1>Exercise 5</h1>
+  <h2>Grade finder</h2>
+
+</body>
+</html>
+
+

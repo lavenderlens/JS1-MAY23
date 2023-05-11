@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EX6-B2</title>
+	<meta charset="utf-8" lang="en"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*css rules*/
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Bank account as ES6 class</h1>
+    <div id="something">
+        <!-- html elements -->
+    </div>
+<script>
+    //JS code
+    'use strict';
+    class Account {
+        
+        constructor(name, number, balance){
+            this.name = name;
+            this.number = number;
+            this.balance = balance;
+        };
+        deposit(amount){this.balance += amount};
+        withdraw(amount){this.balance -= amount};  
+        display(){alert('Account name: ' + this.name 
+                        + '\nnumber: ' + this.number 
+                        + '\nbalance: £' 
+                        + this.balance.toFixed(2));//balance accuracy
+                        };
+    }//end class
+    let a1 = new Account('LAVENDER', 1001, 20.00);
+    let a2 = new Account('BAILEY', 1001, 500.00);
+    a1.deposit(100);
+    a2.deposit(100);
+
+    a1.display();
+    a2.display();
+    
+</script>
+</body>
+
+</html>
+<!-- 
+Bank account (constructor function)
+1. Create a HTML page named bank-account-constructor-function.html.
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Declare a constructor function named Account. It should accept a name, number,
+and balance, and assign each one to a property of the object under construction.
+5. Add two function properties to the constructor function’s prototype, one named deposit, the other named withdraw. 
+Each function should accept an amount and adjust the balance.
+6. UsetheAccountconstructorfunctiontocreatetwoAccountobjects(referenced
+by variables named a1, and a2), passing arguments as you see fit.
+7. Deposit £100 into each account.
+8. Add a function property named display to the object referenced by a1. 
+The function should display the account name, number, and balance in an alert with appropriate labels.
+9. Is the display method available to both Account objects? Write some code to test your theory.
+10. If you now add the display function to the Account constructor function’s prototype, 
+will it be available to each of the Account objects created previously? 
+Write some code to test your theory.
+11. Save your changes.
+12. Open the file in Chrome and test the code thoroughly.
+ -->

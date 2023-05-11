@@ -1,0 +1,64 @@
+<!--
+1. Create a HTML page named calculator.html.
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Prompttheuserforthefirstnumber.
+5. Prompt the user for the second number.
+6. Prompt the user for an operator (+ - / *).
+7. Convert each number value entered from a string to a number.
+8. Declare a variable named result and initialise it to 0. You should assign the result
+of the arithmetic expression to this variable.
+9. If the operator is +, add the two numbers.
+10. If the operator is -, subtract the second number from the first.
+11. If the operator is *, find the product of the two numbers.
+12. If the operator is /, divide the first number by the second.
+13. Display the result in an alert with an appropriate label.
+14. Save your changes.
+15. Open the file in Chrome and test the code thoroughly.
+16. What could be done to make this code more robust?
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+	<meta charset="utf-8" lang="en"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*css rules*/
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Calculator</h1>
+    <div id="something">
+        <!-- html elements -->
+    </div>
+<script>
+    //JS code
+    var num1 = prompt('enter first number: ');
+    num1 = +num1;
+    var num2 = prompt('enter another number: ');
+    num2 = +num2;
+    var operator = prompt('enter an operator: + - x or /');//unicode divide symbol is U+00F7
+    var result = 0;
+    switch(operator){
+        case '+': result = num1 + num2;
+        break;
+        case '-': result = num1 - num2;
+        break;
+        case 'x': result = num1 * num2;
+        break;
+        case '/': result = num1 / num2;
+        break;
+        default: alert('please enter a symbol from the list');
+    }
+    alert('answer: ' + num1 + operator + num2 + ' = ' + result);
+
+
+</script>
+</body>
+
+</html>

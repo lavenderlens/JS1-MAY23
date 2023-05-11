@@ -1,0 +1,78 @@
+<!--
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Declare and initialise three variables to store three questions as follows:
+In what year did the Titanic sink on her maiden voyage?  In what year did WW1 begin? 
+In what year was the Qualification of Women act passed?
+5. Declare and initialise three variables to store three answers as follows:
+1912  1914  1918
+6. Construct a for loop with a control variable initialised to 1, a boolean expression that tests if the control variable is less than or equal to 3, and that increments the control variable by 1 at the end of each loop.
+7. Add a switch statement inside the loop that tests the loop’s control variable.
+8. If the control variable is 1, prompt the user to answer question 1. If the user’s
+answer equals the correct answer, display an alert with the message “Right!”, else
+display an alert with the message “Wrong! It was <correct answer>”.
+9. Repeat step 8 twice more for questions 2 and 3.
+10. Save your changes.
+11. Open the file in Chrome and test the code thoroughly.
+12. How might this code be improved?
+    -cut down on code duplication
+    -display no of correct answers
+    -give user option to start quiz
+    -keep looping round a certain number of guesses
+    -quit quiz
+    -multi choice (great for validation)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUIZ-1</title>
+	<meta charset="utf-8" lang="en"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*css rules*/
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Chrono-Quiz version 1</h1>
+    <div id="something">
+        <!-- html elements -->
+    </div>
+<script>
+    //JS code
+    var q1 ='In what year did the Titanic sink on her maiden voyage?';
+    var q2 ='In what year did WW1 begin?';
+    var q3 ='In what year was the Qualification of Women act passed?';
+    var a1 ='1912';
+    var a2 ='1914';
+    var a3 ='1918';
+
+    for (var i = 1; i <= 3; i++) {
+        var guess = '';
+        switch(i){
+            case 1: guess = prompt(q1);
+                    if(guess==a1){
+                        alert('Right!');
+                    } else alert('Wrong... it was ' + a1);
+            break;
+            case 2: guess = prompt(q2);
+            if(guess==a2){
+                        alert('Right!');
+                    } else alert('Wrong... it was ' + a2);
+            break;
+            case 3: guess = prompt(q3);
+            if(guess==a3){
+                        alert('Right!');
+                    } else alert('Wrong... it was ' + a3);
+            break;
+            default: alert('enter a date in yyyy format');
+        }
+        
+    }
+</script>
+</body>
+
+</html>

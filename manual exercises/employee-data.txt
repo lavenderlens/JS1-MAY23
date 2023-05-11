@@ -1,0 +1,16 @@
+Employee data
+1. Create an HTML page named employee.html.
+2. Add a heading of your choosing.
+3. Add a script element in the head.
+4. Declare and initialise variables to store the following data. Be sure to choose
+    descriptive variable names:
+    Employee name
+    Started with the company Salary per month Permanent
+    Tim Smith 2017 £2409.50 Yes
+5. Changethevalueofthesalarypermonthvariableto£2510.90.
+6. Declare and initialise a variable named tim and assign it a string comprised of his name, the year he started with the company, his salary, and his permanent status, e.g. Name: Tim Smith, Started with the company: 2017, ...
+7. Display the variable tim in an alert:
+    alert(tim);
+8. Save your changes.
+9. OpenthefileinChrome.
+10. Is the heading rendered before or after the popup is displayed?

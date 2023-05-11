@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EX6-A</title>
+	<meta charset="utf-8" lang="en"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*css rules*/
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Bank account object literal</h1>
+    <div id="something">
+        <!-- html elements -->
+    </div>
+<script>
+    //JS code
+    var account = {name: 'Davidson', number: 6657, balance: 198.77,
+                    deposit: function(amount){
+                        this.balance += amount;
+                    },
+                    withdraw: function(amount){
+                        this.balance -= amount;
+                    },
+                    display: function(){
+                        alert('Account name: ' + this.name 
+                        + '\nnumber: ' + this.number 
+                        + '\nbalance: £' 
+                        + this.balance.toFixed(2));//balance accuracy
+                    }};
+    account.deposit(100.0);
+    account.withdraw(50.0);
+    account.display();
+    
+    
+</script>
+</body>
+
+</html>
+<!-- 
+    Bank account (object literal)
+1. Create a HTML page named bank-account-literal.html.
+2. Add a heading of your choosing.
+3. Add a script element just before the closing body tag.
+4. Declare a variable named account and assign it an object literal as follows:
+Name Value
+name Davidson number 6657 balance 198.77
+5. Add two function properties to the object, one named deposit, the other named withdraw. Each function should accept an amount and adjust the balance.
+6. Add a function property to the object named display. The function should display the account name, number, and balance in an alert with appropriate labels.
+7. Deposit £100 into the Davidson account.
+8. Withdraw £50 from the Davidson account.
+9. Invoke the account’s display method.
+10. Save your changes.
+11. Open the file in Chrome and test the code thoroughly.
+ -->

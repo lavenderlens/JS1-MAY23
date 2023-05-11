@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS RegExp</title>
+		<!-- uses unicode character set -->
+		<meta charset="UTF-8" lang="en">
+		<!-- sets screen width to device width on load -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- always put styles before scripts -->
+		<!-- always put local styles/scripts after linked -->
+		<style>
+		button{
+			position: relative;
+			top: 150px;
+			display:inline-block;
+			width:200px;
+			height:50px;
+			border-radius:8px;
+			color:white;
+			background:#0887A2;
+			font-size: 1.5em;
+			margin: auto;
+		}
+		button:visited, button:hover{
+			background:#286090;/*bootstrap action colour: hover*/
+		}
+		#welcome{
+			font-family: Arial, Helvetica, sans-serif;
+			letter-spacing: 0.25em;
+			font-size: 0.9em;
+			line-height: 2.7em;
+			text-align: center;
+			background-color: #111;
+			color: white;
+			position: relative;
+			top: 150px;
+		}
+		body{
+			margin:0px;
+		}
+		</style>
+		<script>
+
+		//RETURN CHECKED EMAIL TO SYSTEM
+		var number = 1000;
+
+		var validateEmailAddress = function(){
+			var checkedEmail="";
+			var testEmail = prompt('please enter your email: ');
+
+			var pattern = /([A-z]+)\.{0,3}([A-z]+){1,3}\@[A-z]+(\.[A-z]+){1,3}/ig;
+
+			if(!pattern.test(testEmail)){
+				alert('please enter a proper email address');
+			}
+			else {
+				alert('thankyou for signing up for our newsletter!\nYou are subscriber No. ' + number);
+				checkedEmail = testEmail;
+			}
+			number++;
+			return checkedEmail;
+		}
+		</script>
+
+
+	</head>
+	<body>
+
+	<button onclick="validateEmailAddress()">SIGN UP</button>
+	<p></p>
+	<div id="welcome"></div>
+
+	</body>
+</html>

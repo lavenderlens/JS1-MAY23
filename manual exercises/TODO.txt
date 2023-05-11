@@ -1,0 +1,19 @@
+JS1 Exercise solutions 
+
+TODO or live code
+
+ch6
+transaction date extension to bank app
+
+ch7 
+training course
+chrono quiz 3
+
+ch10
+chrono quiz 4
+
+solutions to the rest are in trainer repo OR in pens OR in drive from previous
+extra examples are in pens and in drive
+//organise pens into theme for course - good idea//
+note manual DOES NOT require tomcat setup for examples now -
+this would be EXTRA if time permits
