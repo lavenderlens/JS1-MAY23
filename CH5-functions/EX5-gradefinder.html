@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EX5</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- styles before scripts -->
+  <!-- linked styles before local styles -->
+<!--   <link rel="stylesheet" href="style.css"> -->
+  <style>
+
+  </style>
+  <!-- linked scripts before local scripts -->
+<!--   <script src="js/main.js"></script>  
+ -->  <script>
+    //test JS here
+    var numMarks = prompt('enter number of marks to be graded:');
+    //need way of cancel calling break?
+    //add listener to cancel button attribute?
+    var total = 0;
+    var count = numMarks;
+    var average;
+    while(count > 0){
+      acceptMarks(numMarks);
+    }
+    alert('Grade = ' + gradeMarks());
+
+    function gradeMarks(){
+      var grade;
+      average = total/numMarks;
+      if(average >= 90){
+        grade = 'A';
+      }else if(average >= 80){
+        grade = 'B';
+      }else if(average >= 70){
+        grade = 'C';
+      }else if(average >= 60){
+        grade = 'D';
+      }else if(average >= 50){
+        grade = 'Pass';
+      }else grade = 'Fail';
+      return grade;
+    }
+    function acceptMarks(numMarks){
+      var mark = prompt('enter mark: (marks remaining ' + count + ')');
+      total += +mark;
+      count--;
+    }
+  </script>
+</head>
+<body>
+  <h1>Exercise 5</h1>
+  <h2>Grade finder</h2>
+
+</body>
+</html>
+
+

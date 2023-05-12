@@ -1,0 +1,66 @@
+<!--
+1. Save chrono-quiz-1.html as chrono-quiz-2.html.
+2. The code that is executed for each case of the switch statement is the same (save
+for the question and answer). Extract this code into a function and invoke the function in the switch statement.
+Hint: the function should accept a question and the right answer.
+3. Save your changes.
+4. Open the file in Chrome and test the code thoroughly.
+    - could make function return a boolean or increment a correct score variable
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUIZ-2</title>
+	<meta charset="utf-8" lang="en"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*css rules*/
+    </style>
+
+</head>
+
+
+<body>
+    <h1>Chrono-Quiz version 2</h1>
+    <div id="something">
+        <!-- html elements -->
+    </div>
+<script>
+    //JS code
+    var q1 ='In what year did the Titanic sink on her maiden voyage?';
+    var q2 ='In what year did WW1 begin?';
+    var q3 ='In what year was the Qualification of Women act passed?';
+    var a1 ='1912';
+    var a2 ='1914';
+    var a3 ='1918';
+
+    // var score = 0;
+    function theChaser(guess, answer){
+        if(guess==answer){
+            alert('Right!');
+            // score++;
+        } else alert('Wrong... it was ' + answer);
+    }
+
+    for (var i = 1; i <= 3; i++) {
+        var guess = '';
+        switch(i){
+            case 1: guess = prompt(q1);
+                    theChaser(guess, a1);
+            break;
+            case 2: guess = prompt(q2);
+                    theChaser(guess, a2);
+            break;
+            case 3: guess = prompt(q3);
+                    theChaser(guess, a3);
+            break;
+            default: alert('enter a date in yyyy format');
+        }        
+    }
+    // console.log('test taken, score = ' + score);
+
+</script>
+</body>
+
+</html>
