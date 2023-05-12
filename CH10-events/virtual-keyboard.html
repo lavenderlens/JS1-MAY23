@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIRT KBD</title>
+    <style>
+              body{
+        background: #333;
+      }
+      .let{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .key{
+        display: inline-block;
+        font-family: Arial;
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: #111;
+        color: #CCC;
+        width: 4vw;
+        height: 4vw;
+        border: 1px solid #666;
+        border-radius: 0.25rem;
+        text-align: center;
+        line-height: 3.5rem;
+        margin: 0px 2px 0px 2px;
+        -webkit-box-shadow: 0px 0px 6px 3px rgba(255,255,255,0.45);
+      -moz-box-shadow: 0px 0px 6px 3px rgba(255,255,255,0.45);
+      box-shadow: 0px 0px 6px 3px rgba(255,255,255,0.45);
+
+      }
+      #row2{
+        position:relative;
+        left:2vw;
+        margin-top:5px;
+      }
+      #row3{
+        position:relative;
+        left:4vw;
+        margin-top:5px;
+      }
+      #keyboard{
+        width: 55vw;
+        margin: auto;
+      }
+      .keyDown{
+      /*  all rules repeated even if no change - it's not like a media query  */
+        display: inline-block;
+        font-family: Arial;
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: #111;
+        color: #999;
+        width: 4vw;
+        height: 4vw;
+        border: 1px solid #666;
+        border-radius: 0.25rem;
+        text-align: center;
+        line-height: 3.5rem;
+        margin: 0px 2px 0px 2px;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="keyboard">
+      <div id="row1">
+        <div class="key"><div class="let">Q</div></div>
+        <div class="key"><div class="let">W</div></div>
+        <div class="key"><div class="let">E</div></div>
+        <div class="key"><div class="let">R</div></div>
+        <div class="key"><div class="let">T</div></div>
+        <div class="key"><div class="let">Y</div></div>
+        <div class="key"><div class="let">U</div></div>
+        <div class="key"><div class="let">I</div></div>
+        <div class="key"><div class="let">O</div></div>
+        <div class="key"><div class="let">P</div></div>
+      </div>
+      <div id="row2">
+        <div class="key"><div class="let">A</div></div>
+        <div class="key"><div class="let">S</div></div>
+        <div class="key"><div class="let">D</div></div>
+        <div class="key"><div class="let">F</div></div>
+        <div class="key"><div class="let">G</div></div>
+        <div class="key"><div class="let">H</div></div>
+        <div class="key"><div class="let">J</div></div>
+        <div class="key"><div class="let">K</div></div>
+        <div class="key"><div class="let">L</div></div>
+      </div>
+      <div id="row3">
+        <div class="key"><div class="let">Z</div></div>
+        <div class="key"><div class="let">X</div></div>
+        <div class="key"><div class="let">C</div></div>
+        <div class="key"><div class="let">V</div></div>
+        <div class="key"><div class="let">B</div></div>
+        <div class="key"><div class="let">N</div></div>
+        <div class="key"><div class="let">M</div></div>
+      </div>
+    </div>
+    <script>
+      //make async as script references DOM
+      window.setTimeout(addListeners, 500);
+      //return array of all elements with class .key
+      var keys = document.querySelectorAll(".key");
+      //add listeners
+      function addListeners() {
+        for (var i = 0; i < keys.length; i++) {
+          //console.log(keys[i]);//testing
+          keys[i].addEventListener("mousedown", toggleScript);
+          keys[i].addEventListener("mouseup", toggleScript);
+        }
+      }
+      //refactored
+      function toggleScript() {
+        this.classList.toggle("key");
+        this.classList.toggle("keyDown");
+      }
+    </script>
+  </body>
+</html>
