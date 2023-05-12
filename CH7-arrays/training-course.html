@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAINING COURSE</title>
+    <script>
+      const trainees = [
+        "Ryan",
+        "Iestyn",
+        "Jasan",
+        "Liam",
+        "Keyur",
+        "James",
+        "Greg",
+        "Khurram",
+      ];
+      let allTrainees = "";
+      for (let i = 0; i < trainees.length; i++) {
+        allTrainees += trainees[i] + "\n";
+      }
+      // alert(allTrainees);
+      trainees.push("Alan");
+      console.log(trainees);
+
+      trainees.sort();
+      console.log(trainees);
+
+      // let findme = trainees.indexOf("Alan");
+      // let alan = trainees.splice(findme, 1);
+      // OR
+      let alan = trainees.splice(trainees.indexOf("Alan"), 1);
+
+      console.log(trainees);
+      console.log(alan + " removed");
+
+      allTrainees = "";
+      trainees.forEach((el) => (allTrainees += el + ", "));
+
+      alert(allTrainees);
+    </script>
+  </head>
+  <body>
+    <h1>Training Course Exercise</h1>
+  </body>
+</html>
