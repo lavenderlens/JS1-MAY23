@@ -1,0 +1,120 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	/* this is great and disables the normal additive flow layout of the css box model
+	- use it for eliminating that annoying "wobble" on horizontal scroll 
+	where box props like margin and padding are present (default value: content-box
+	reference https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+	box-sizing: border-box;
+}
+.card {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: relative;
+	width: 90vw;
+	height: 8rem;
+	font-size: 2rem;
+	border: 1px solid grey;
+	padding: 1rem;
+	background: rgb(255, 255, 185);
+	box-shadow: 0px 10px 15px 5px rgba(117, 117, 117, 1);
+	margin: auto;
+}
+#directions-wrapper {
+	display: block;
+	width: 100vw;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	line-height: 2em;
+	background: rebeccapurple;
+	color: white;
+	padding: 1em;
+	text-align: center;
+	font-weight: 800;
+	margin: none;
+}
+#directions {
+	display: inline-block;
+	border: 1px solid white;
+	border-radius: 0.25rem;
+	padding: 1.5rem;
+	margin-right: 1rem;
+}
+input[type="text"] {
+	font-size: 2rem;
+	text-indent: 0.5rem;
+}
+input[type="checkbox"] {
+	height: 4rem;
+	width: 4rem;
+	/* customise checkbox-checked */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	/* customise checkbox-checked */
+	border-radius: 0.5rem;
+	outline: none;
+	background-color: white;
+	border: 1px solid black;
+	margin-right: 4rem;
+	transition-duration: 0.4s;
+}
+input[type="checkbox"]:checked {
+	position: static;
+	background-color: #34495e;
+	/* content: "\u{2713}"; */
+	/* content: "X"; */
+	/* text-align: center;
+	font-size: 3rem;
+	color: white; */
+}
+#deleteButton {
+	position: absolute;
+	right: 2em;
+	width: 8em;
+	height: 4em;
+}
+
+@media screen and (max-width: 1024px) {
+	input[type="checkbox"] {
+		height: 3rem;
+		width: 3rem;
+		margin-right: 2.5rem;
+		margin-left: 1rem;
+	}
+	#directions {
+		/* display: inline; */
+	}
+	.card {
+		min-width: 100vw;
+	}
+	input[type="text"] {
+		/* font-size: 2rem; */
+		text-indent: 0.5rem;
+	}
+	#compose {
+		display: inline;
+	}
+	#deleteButton {
+		right: 1em;
+		width: 6em;
+		height: 3em;
+	}
+
+	@media (orientation: portrait) {
+		input[type="text"] {
+			width: 75vw;
+		}
+		#directions {
+			padding: 1.5rem;
+		}
+		.card input[type="checkbox"] {
+			height: 2.5rem;
+			width: 2.5rem;
+			margin-right: 1.5rem;
+		}
+	}
+}
