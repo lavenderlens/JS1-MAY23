@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS1 AJAX</title>
+		<meta charset="utf-8"  />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			.result{
+				border: 1px solid #666666;
+				display: block;
+				padding: 15px;
+				width: 75vw;
+			}
+			#text{
+				background: rgba(204, 255, 0, 0.75)
+			}
+			#xml{
+				background: rgba(255, 204, 0, 0.75)
+			}
+			#json{
+				background: rgba(0, 204, 255, 0.75)
+			}
+		
+		</style>
+		<script>
+
+
+			function getText() {
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function() {
+					if(request.readyState == 4 && request.status == 200) {
+						document.getElementById('text').innerHTML = request.responseText;
+					}
+				}
+				request.open('GET', 'ajax.txt', true);
+				request.send();
+			}
+
+
+			function getXML() {
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function() {
+					if(request.readyState == 4 && request.status == 200) {
+						var songs = request.responseXML.getElementsByTagName('song');
+						var textToAddToPage = '<table><tr><th>Track</th><th>Album</th><tr>';
+						for(var i = 0; i < songs.length; i++) {
+							var track = songs[i].getElementsByTagName('track')[0].childNodes[0].nodeValue;
+							var album = songs[i].getElementsByTagName('album')[0].childNodes[0].nodeValue;
+							textToAddToPage += '<tr><td>' + track + '</td><td>' + album + '</td></tr>';
+						}
+						textToAddToPage += '</table>';
+						document.getElementById('xml').innerHTML = textToAddToPage;
+					}
+				}
+				request.open('GET', 'ajax.xml', true);
+				request.send();
+			}
+
+
+			function getJSON() {
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function() {
+					if(request.readyState == 4 && request.status == 200) {
+						var trainer = JSON.parse(request.responseText);
+						var textToAddToPage = trainer.firstName + ' ' + trainer.lastName 
+							+ ' is ' + trainer.age + ' years old. He teaches ';
+						for(var i = 0; i < trainer.languages.length; i++) {
+							if(i == trainer.languages.length - 1) {
+								textToAddToPage += ' and ' + trainer.languages[i] + '. ';
+							}
+							else {
+								textToAddToPage += trainer.languages[i] + ', ';
+							}
+						}
+						textToAddToPage += '<p>When coding he often listens to: </p><ul>';
+						for (var i = 0; i < trainer.music.length; i++) {
+							if(i == trainer.music.length - 1) {
+								textToAddToPage += '<li>' + trainer.music[i] + '</li></ul>';
+							}
+							else {
+								textToAddToPage += '<li>' + trainer.music[i] + '</li>';
+							}
+						}
+						textToAddToPage += 'He is based at ' + trainer.address.number + ' ' 
+							+ trainer.address.street + ', ' + trainer.address.city + ' ';
+						textToAddToPage += 'His work phone number is ' + trainer.phone[0].number;
+						document.getElementById('json').innerHTML = textToAddToPage;
+					}
+				}
+				request.open('GET', 'ajax.json', true);
+				request.send();
+			}
+
+		</script>
+
+		<style>
+		td{
+			padding: 0px 30px 0px 15px;
+		}
+		</style>
+
+	</head>
+	<body>
+		<h1>AJAX</h1>
+		<h2>from various sources</h2>
+		<div id="text" class="result"></div>
+		<p><a href="#" onClick="getText()">Get text from another document</a></p>
+		<div id="xml" class="result"></div>
+		<p><a href="#" onClick="getXML()">Get XML from another document</a></p>
+		<div id="json" class="result"></div>
+		<p><a href="#" onClick="getJSON()">Get JSON from another document</a></p>
+	</body>
+</html>

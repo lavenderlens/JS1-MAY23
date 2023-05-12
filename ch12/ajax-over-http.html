@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>JS1 AJAX</title>
+	<meta charset="utf-8"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    local styles-->
+    <style>
+    dd{
+    	font-size: 0.75em;
+    	width: 75vw;
+    }
+    </style>
+    
+    <!--    local JS-->
+    <script>
+        //****SERVE FROM TOMCAT****
+        
+        //wait for page to load then call
+        //these are souped-up versions of html attributes onload and onclick!!
+        window.addEventListener('load', assignHandlers);
+        
+        function assignHandlers(){
+            document.getElementById('button').addEventListener('click', getData);//use once so no need to assign to a variable
+            //refactored to second handler for second button
+            document.getElementById('button2').addEventListener('click', getJSON);//use once so don't assign
+        }
+        
+        function getData(){
+            //create a request object
+            var request = new XMLHttpRequest();
+            
+            //add after first test
+            //specify what we want to do with the response
+            request.onreadystatechange = function (){
+            //code to execute when state of request changes
+                if(request.readyState == 4 && request.status == 200){
+                //read response and write to DOM
+                //console.log(request.responseText);//testing
+                document.getElementById('ajax').innerHTML = request.responseText;
+            }
+        };
+                
+            //specify what data we want and how to get it
+            request.open('GET', 'ajax.dat', true);//3rd param:
+            //asynchronous? true or false
+            //no username/password but these can be 4th and 5th params
+
+            //send request
+            request.send();//no args: 
+            //all we can do with JS client-side alone is request whole file
+            //we have to write code to parse and display it
+                
+        }//end getData()
+            
+			function getJSON() {
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function() {
+					if(request.readyState == 4 && request.status == 200) {
+						var vacancies = JSON.parse(request.responseText);
+
+						//WORKING WITH A LARGER JSON OBJECT E.G.CODEPEN JOBS
+						//https://codepen.io/jobs.json
+                        //server should allow cross-origin requests
+                        //and not require user/pass
+
+                        //build ouput, starting at top (definition list):
+						var textToAddToPage = 'NEW VACANCIES:<dl class="list">';
+
+  						var each = vacancies.jobs;
+
+                        //loop through definition list titles and descriptions
+						for(i = 0; i<10; i++){
+							textToAddToPage += '<p></p><dt><strong>' + each[i].title + '</strong></dt>'
+							+ '<dt>' + each[i].company_name + '</dt>'
+							+ '<dd>' + each[i].description + '</dd>';
+						}
+
+                        //close list tag
+						textToAddToPage += '</dl>';
+                        //write to DOM
+						document.getElementById('json').innerHTML = textToAddToPage;
+					}
+				}
+				//could use a local file jobs.json but this gets LIVE info//
+				// request.open('GET', 'https://codepen.io/jobs.json', true);//deprecated by codepen
+                request.open('GET', 'jobs.json', true);
+
+				request.send();
+			}//END get json
+    </script>
+
+</head>
+
+
+<body>
+<h2>AJAX with JSON</h2><br>
+AJAX requests for 
+<p><ul>
+    <li>a small data file, locally hosted</li>
+    <li>a larger JSON object from a remote host, CORS-enabled</li>
+</ul>
+    <p></p>
+    <button id="button">Get plain text from server</button>
+    <p></p>
+    <div id="ajax"></div>
+    <p></p>
+    <button id="button2">Get JSON data from server</button>
+    <p id="json"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+	"firstName": "Alan",
+	"lastName": "Lavender",
+	"age": 50,
+	"languages": ["HTML", "CSS", "JavaScript", "jQuery", "Responsive Web Design", "Java"],
+	"address": 
+	{
+		"number": 6, 
+		"street": "Long Lane",
+		"city": "London"
+	},
+	"phone": [
+		{
+			"type": "work",
+			"number": 1234567890
+		},
+		{
+			"type": "mobile",
+			"number": 9876543210
+		}
+	],
+	"music": ["Bruce Springsteen","Coldplay","Rag n Bone Man","Florence and the Machine","Eddi Reader","Talking Heads","The Prodigy","Claude Debussy","Philip Glass","J.S. Bach"]
+}
