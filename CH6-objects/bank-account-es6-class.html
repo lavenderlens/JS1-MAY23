@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EX6-B</title>
+    <meta charset="utf-8" lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /*css rules*/
+    </style>
+  </head>
+
+  <body>
+    <h1>Bank account constructor function</h1>
+    <h2>Refactored as ES6 class!</h2>
+    <div id="something">
+      <!-- html elements -->
+    </div>
+    <script>
+      //JS code
+      class Account {
+        constructor(name, number, balance) {
+          this.name = name;
+          this.number = number;
+          this.balance = balance;
+        }
+        deposit = function (amount) {
+          this.balance += amount;
+        };
+        withdraw = function (amount) {
+          this.balance -= amount;
+        };
+      }
+      //runtime should be the same
+      var a1 = new Account("LAVENDER", 1001, 20.0);
+      var a2 = new Account("BAILEY", 1001, 500.0);
+      a1.deposit(100);
+      a2.deposit(100);
+      a1.display = function () {
+        alert(
+          "Account name: " +
+            this.name +
+            "\nnumber: " +
+            this.number +
+            "\nbalance: £" +
+            this.balance.toFixed(2)
+        ); //balance accuracy
+      };
+      a1.display();
+      // a2.display();
+      Account.prototype.display = function () {
+        alert(
+          "Account name: " +
+            this.name +
+            "\nnumber: " +
+            this.number +
+            "\nbalance: £" +
+            this.balance.toFixed(2)
+        ); //balance accuracy
+      };
+      a1.display();
+      a2.display();
+    </script>
+  </body>
+</html>
